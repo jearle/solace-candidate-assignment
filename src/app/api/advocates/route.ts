@@ -1,12 +1,21 @@
-import db from "../../../db";
-import { advocates } from "../../../db/schema";
-import { advocateData } from "../../../db/seed/advocates";
+import { advocatesService } from '@/advocates/api';
 
-export async function GET() {
-  // Uncomment this line to use a database
-  // const data = await db.select().from(advocates);
+export const GET = async () => {
+  const { advocates } = await advocatesService.get();
 
-  const data = advocateData;
+  const data = {
+    advocates,
+  };
+  const errors = [];
+  const systemErrors = [];
 
-  return Response.json({ data });
-}
+  const response = {
+    data,
+    errors,
+    systemErrors,
+  };
+
+  const responseJSON = Response.json(response);
+
+  return responseJSON;
+};

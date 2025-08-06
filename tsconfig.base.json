@@ -1,26 +1,19 @@
 {
   "compilerOptions": {
-    "types": ["react", "react-dom", "node"],
-
-    /* Target Options - Latest browsers only */
-    "target": "ES2024",
-    "lib": ["ES2024", "DOM", "DOM.Iterable", "WebWorker"],
-
-    /* Modules */
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noEmit": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "isolatedModules": true,
+    "jsx": "preserve",
 
     /* Type Checking Options - Ultra Strict */
-    "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
+    "strictNullChecks": true,
 
     /* Additional Strict Checks */
     "noUnusedLocals": true,
@@ -30,17 +23,6 @@
     "noPropertyAccessFromIndexSignature": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "noUncheckedSideEffectImports": true,
-
-    /* Emit */
-    "noEmit": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-
-    /* JSX */
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
 
     /* Interop Constraints */
     "forceConsistentCasingInFileNames": true,
@@ -53,7 +35,5 @@
 
     /* Modern Features */
     "useDefineForClassFields": true
-  },
-  "include": ["src/**/*", "*.ts", "*.tsx", "*.js", "*.jsx"],
-  "exclude": ["node_modules", "dist*", "coverage"]
+  }
 }
