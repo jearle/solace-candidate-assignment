@@ -1,11 +1,17 @@
 'use client';
 
+import { Advocates } from '@/advocates';
+
+import { Header } from './header';
+
 export const HomePage = () => {
   return (
     <main className='flex flex-col h-screen w-screen'>
-      <header className='bg-gray-200 p-4'>Solace Advocates</header>
-      <article className='flex-1 overflow-auto p-4 bg-white'>article</article>
-      <footer className='bg-gray-300 p-4'>footer</footer>
+      <Header />
+      <article className='bg-card flex-1 overflow-auto p-0'>
+        <Advocates />
+      </article>
+      <footer className='bg-secondary p-2'></footer>
     </main>
   );
 };

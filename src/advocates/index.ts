@@ -1,1 +1,2 @@
-export * from './page';
+export * from './advocates';
+export * from './advocate-search';
