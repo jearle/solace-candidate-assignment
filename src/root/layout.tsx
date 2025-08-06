@@ -19,7 +19,7 @@ export const RootLayout = (props: RootLayoutProps) => {
   const { children } = props;
 
   return (
-    <html lang='en'>
+    <html lang='en' className={`text-sm`}>
       <body className={inter.className}>{children}</body>
     </html>
   );

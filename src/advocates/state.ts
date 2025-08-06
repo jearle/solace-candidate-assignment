@@ -4,6 +4,8 @@ import { loadable } from 'jotai/utils';
 import { createFetchAdvocates } from './create-fetch-advocates';
 import { EMPTY_ADVOCATE_RESULT, ERROR_STATE, LOADING_STATE } from './constants';
 
+const searchTextState = atom(``);
+
 const fetchAdvocatesState = atom(createFetchAdvocates());
 
 const asyncAdvocatesResultState = atom(async (get) => {
@@ -17,6 +19,14 @@ const asyncAdvocatesResultState = atom(async (get) => {
 });
 
 const loadableAdvocatesResultState = loadable(asyncAdvocatesResultState);
+
+export const useSearchText = () => {
+  const [searchText, setSearchText] = useAtom(searchTextState);
+
+  const result = { searchText, setSearchText };
+
+  return result;
+};
 
 export const useAdvocatesResult = () => {
   const [loadableAdvocatesResult] = useAtom(loadableAdvocatesResultState);
