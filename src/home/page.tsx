@@ -3,6 +3,7 @@
 import { Advocates } from '@/advocates';
 
 import { Header } from './header';
+import { Footer } from './footer';
 
 export const HomePage = () => {
   return (
@@ -11,7 +12,7 @@ export const HomePage = () => {
       <article className='bg-card flex-1 overflow-auto p-0'>
         <Advocates />
       </article>
-      <footer className='bg-secondary p-2'></footer>
+      <Footer />
     </main>
   );
 };
