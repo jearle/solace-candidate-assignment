@@ -1,31 +1,66 @@
 # Jesse Earle - Solace Candidate Assignment
 
+_Note: The default branch is set to `epic/solace-engineering-assignment`, which reflects the final version of my submission. The original code remains on `master`._
+
 ## Tested with
 
-- node >=22 <24
-- npm >=10 <11
+- node >=22 =<24
+- npm >=10 =<11
 - docker 28.3.2
 
 ## Steps to run
 
-1. `nvm use v24`
-   a. ensure node is installed using `nvm`, `fnm` or your favorite install method
-2. `npm install`
-   a. install all deps
-3. `npm run docker:postgres:dev`
-   a. Select _Yes, I want to execute all statements_
-   b. Ensure that your postgres port `5432` is not taken
-   b. This will run `docker compose down`, `docker compose up` and `drizzle-kit push`
-4. `npm run seed`
-   a. This will seed the database with 15 records
-5. `npm run dev`
-   a. This will run the application at http://localhost:3000
+### 1. Use correct node version
+
+```sh
+nvm use v24
+# or use fnm or your preferred method
+```
+
+### 2. Install dependencies
+
+```sh
+npm install
+```
+
+### 3. Start postgres with docker
+
+```sh
+npm run docker:postgres:dev
+```
+
+- select `yes, i want to execute all statements` when prompted.
+- make sure port `5432` is available.
+- this will:
+  - run `docker compose down`
+  - run `docker compose up`
+  - run `drizzle-kit push`
+
+### 4. Seed the database
+
+```sh
+npm run seed
+```
+
+- seeds the database with 15 advocate records.
+
+### 5. Start the app
+
+```sh
+npm run dev
+```
+
+- app will be available at [http://localhost:3000](http://localhost:3000)
 
 ## Project management
 
-Please visit my closed issues https://github.com/jearle/solace-candidate-assignment/issues?q=is%3Aissue%20state%3Aclosed to see how I've structured my issues for this project.
+- **Issues:**
+  See how I organized my work using issues:
+  [Closed Issues](https://github.com/jearle/solace-candidate-assignment/issues?q=is%3Aissue+state%3Aclosed)
 
-Similarly please see my closed PRs https://github.com/jearle/solace-candidate-assignment/pulls?q=is%3Apr+is%3Aclosed to see how I've structued them.
+- **Pull Requests:**
+  PRs are grouped by type: epic, breaking, feature, improvement, and bug. The epic branch serves as the main integration branch, and the other PRs follow a naming convention inspired by semantic versioning (major, minor, patch):
+  [Closed PRs](https://github.com/jearle/solace-candidate-assignment/pulls?q=is%3Apr+is%3Aclosed)
 
 # Original README
 
