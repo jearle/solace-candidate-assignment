@@ -1,19 +1,19 @@
 import { Search } from 'lucide-react';
 
 import { Input } from '@/components/ui/input';
-import { useSearchText } from './state';
+import { useSearch } from './state';
 import { ChangeEvent, useCallback } from 'react';
 
 export const AdvocateSearch = () => {
-  const { searchText, setSearchText } = useSearchText();
+  const { search, setSearch } = useSearch();
 
   const onChangeSearchInput = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
-      const { value } = e.target;
+      const { value: nextSearch } = e.target;
 
-      setSearchText(value);
+      setSearch(nextSearch);
     },
-    [setSearchText],
+    [setSearch],
   );
 
   return (
@@ -22,7 +22,7 @@ export const AdvocateSearch = () => {
       <Input
         placeholder={`search`}
         className='bg-background pl-10'
-        value={searchText}
+        value={search}
         onChange={onChangeSearchInput}
       />
     </div>

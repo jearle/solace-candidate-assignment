@@ -13,6 +13,7 @@
     "seed": "TS_NODE_PROJECT=tsconfig.tsnode.json ts-node -r dotenv/config -r tsconfig-paths/register ./src/db/seed/index.ts"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@tanstack/react-table": "^8.21.3",
     "class-variance-authority": "^0.7.1",
