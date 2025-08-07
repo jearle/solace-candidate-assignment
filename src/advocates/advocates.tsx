@@ -4,7 +4,7 @@ import { useAdvocatesResult } from './state';
 import { COLUMNS } from './columns';
 
 export const Advocates = () => {
-  const { advocates, state, errors, systemErrors } = useAdvocatesResult();
+  const { advocates } = useAdvocatesResult();
 
   return (
     <div className={`h-full w-full`}>

@@ -1,5 +1,6 @@
 services:
   db:
+    container_name: jesse-earle-postgres
     image: postgres
     restart: always
     environment:
