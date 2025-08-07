@@ -1,6 +1,10 @@
 {
   "name": "solace-candidate-assignment",
   "version": "0.1.0",
+  "engines": {
+    "node": ">=22 <24",
+    "npm": ">=10 <11"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
