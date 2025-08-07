@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "npx prettier --write ./src/**/*.{ts,tsx,css,js}",
+    "compile": "tsc",
+    "verify": "npm run lint && npm run format && npm run compile",
     "generate": "drizzle-kit generate",
     "docker:postgres:dev": "docker compose down -v && docker compose up -d && npx drizzle-kit push",
     "migrate:up": "node ./src/db/migrate.js",
