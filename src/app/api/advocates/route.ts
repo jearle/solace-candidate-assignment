@@ -1,12 +1,28 @@
-import db from "../../../db";
-import { advocates } from "../../../db/schema";
-import { advocateData } from "../../../db/seed/advocates";
+import { type NextRequest } from 'next/server';
 
-export async function GET() {
-  // Uncomment this line to use a database
-  // const data = await db.select().from(advocates);
+import { advocatesService } from '@/advocates/api';
 
-  const data = advocateData;
+export const GET = async (request: NextRequest) => {
+  const { searchParams } = new URL(request.url);
+  const page = parseInt(searchParams.get('page') ?? '1', 10);
+  const limit = parseInt(searchParams.get('limit') ?? '10', 10);
+  const search = searchParams.get('search') ?? '';
 
-  return Response.json({ data });
-}
+  const { advocates } = await advocatesService.get({ page, limit, search });
+
+  const data = {
+    advocates,
+  };
+  const errors = [];
+  const systemErrors = [];
+
+  const response = {
+    data,
+    errors,
+    systemErrors,
+  };
+
+  const responseJSON = Response.json(response);
+
+  return responseJSON;
+};
