@@ -1,3 +1,29 @@
+# Jesse Earle - Solace Candidate Assignment
+
+## Tested with
+
+- node >=22 <24
+- npm >=10 <11
+- docker 28.3.2
+
+## Steps to run
+
+1. `nvm use v24`
+   a. ensure node is installed using `nvm`, `fnm` or your favorite install method
+2. `npm install`
+   a. install all deps
+3. `npm run docker:postgres:dev`
+   a. Select _Yes, I want to execute all statements_
+   b. This will run `docker compose down`, `docker compose up` and `drizzle-kit push`
+4. `npm run seed`
+   a. This will seed the database with 15 records
+5. `npm run dev`
+   a. This will run the application at http://localhost:3000
+
+--
+
+# Original README
+
 ## Solace Candidate Assignment
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
